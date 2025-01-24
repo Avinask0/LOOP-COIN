@@ -16,8 +16,8 @@
             justify-content: center;
             height: 100vh;
             text-align: center;
-            background-color: #121212;
-            color: white;
+            background-color: #121212; /* Dark background for comfort */
+            color: white; /* White text for contrast */
         }
 
         header {
@@ -28,11 +28,11 @@
         h1 {
             font-size: 36px;
             margin: 0;
-            color: #d5008f;
+            color: #d5008f; /* Soft magenta color */
             background: linear-gradient(to right, #d5008f, #ff4081);
             -webkit-background-clip: text;
             color: transparent;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle glow effect */
         }
 
         .search-container {
@@ -42,19 +42,19 @@
         }
 
         #address {
-            padding: 10px;
-            font-size: 16px;
+            padding: 6px 10px; /* Reduced padding */
+            font-size: 14px; /* Reduced font size */
             margin-right: 10px;
-            border: 2px solid #d5008f;
-            border-radius: 8px;
+            border: 2px solid #d5008f; /* Magenta border */
+            border-radius: 8px; /* Rounded border for sleek appearance */
             color: white;
-            background-color: #333333;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 4px 20px rgba(0, 0, 0, 0.4);
+            background-color: #333333; /* Dark input background for readability */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 4px 20px rgba(0, 0, 0, 0.4); /* Enhanced glossy shadow */
             transition: all 0.3s ease;
         }
 
         #address:focus {
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5), 0 6px 30px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5), 0 6px 30px rgba(0, 0, 0, 0.6); /* Focus glossy shine */
             outline: none;
         }
 
@@ -63,37 +63,36 @@
             font-size: 16px;
             border: none;
             border-radius: 4px;
-            background-color: #d5008f;
+            background-color: #d5008f; /* Magenta button */
             color: white;
             cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 2px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 2px 15px rgba(0, 0, 0, 0.3); /* Glossy shadow */
             transition: all 0.3s ease;
         }
 
         button:hover {
-            background-color: #9c007a;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 4px 20px rgba(0, 0, 0, 0.5);
+            background-color: #9c007a; /* Darker magenta on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 4px 20px rgba(0, 0, 0, 0.5); /* Hover glossy shine */
         }
 
         .token-address {
-            margin-top: 15px; /* Reduced top margin */
+            margin-top: 15px; /* Reduced margin */
             font-size: 12px; /* Smaller font size */
-            background-color: #444444;
-            padding: 8px; /* Reduced padding */
-            border-radius: 8px;
+            background-color: #444444; /* Slightly lighter background for token address */
+            padding: 10px; /* Reduced padding */
+            border-radius: 8px; /* Rounded edges for a softer feel */
             display: inline-block;
             cursor: pointer;
             text-align: center;
             color: white;
-            border: 2px solid #d5008f;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 4px 20px rgba(0, 0, 0, 0.4);
+            border: 2px solid #d5008f; /* Magenta border around token address */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 4px 20px rgba(0, 0, 0, 0.4); /* Glossy shadow */
             transition: all 0.3s ease;
-            width: 250px; /* Adjusted width */
         }
 
         .token-address:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5), 0 6px 30px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5), 0 6px 30px rgba(0, 0, 0, 0.6); /* Enhanced hover glossy shine */
         }
 
         section {
@@ -101,15 +100,15 @@
             padding: 20px;
             width: 80%;
             max-width: 800px;
-            background-color: #222222;
+            background-color: #222222; /* Dark background for sections */
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 6px 25px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 6px 25px rgba(0, 0, 0, 0.4); /* Glossy shadow */
         }
 
         footer {
             margin-top: 20px;
             font-size: 14px;
-            color: #bbb;
+            color: #bbb; /* Light gray for footer text */
         }
     </style>
 </head>
@@ -120,6 +119,7 @@
             <input type="text" id="address" placeholder="Enter address...">
             <button type="button" onclick="searchAddress()">Search</button>
         </div>
+        <!-- Token address section -->
         <div class="token-address" onclick="copyAddress()">
             0x9163AA4106334F6Ea351372Ca65D6554440a238b
         </div>
@@ -155,6 +155,7 @@
             }
         }
 
+        // Function to copy the token address
         function copyAddress() {
             var copyText = document.querySelector(".token-address");
             var range = document.createRange();
