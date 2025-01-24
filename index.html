@@ -9,8 +9,8 @@
     <header>
         <h1>LOOP COIN</h1>
         <div class="search-container">
-            <input type="text" placeholder="Search...">
-            <button type="button">Search</button>
+            <input type="text" id="address" placeholder="Enter address...">
+            <button type="button" onclick="searchAddress()">Search</button>
         </div>
     </header>
 
@@ -32,5 +32,17 @@
     <footer>
         <p>&copy; 2025 LOOP COIN. All rights reserved.</p>
     </footer>
+
+    <script>
+        function searchAddress() {
+            var address = document.getElementById("address").value;
+            if (address) {
+                var url = "https://polygonscan.com/address/" + address + "#code";  // Add #code to URL
+                window.open(url, "_blank"); // Open the URL in a new tab
+            } else {
+                alert("Please enter an address.");
+            }
+        }
+    </script>
 </body>
 </html>
