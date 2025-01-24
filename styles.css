@@ -1,1 +1,61 @@
+/* styles.css */
 
+/* Set the background color and text color */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFC0CB; /* Light pink background */
+    color: #ffffff; /* White text color */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    padding: 50px;
+    background-color: #ff69b4; /* Hot pink header */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+header p {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+/* Section styling */
+section {
+    padding: 40px;
+    margin: 20px;
+    background-color: #ffb6c1; /* Soft pink background for sections */
+    border-radius: 8px;
+}
+
+section h2 {
+    font-size: 2em;
+    color: #ff1493; /* Deep pink for headings */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ff69b4;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
