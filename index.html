@@ -4,6 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOOP COIN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .search-container {
+            margin-bottom: 20px;
+        }
+        #token-details {
+            margin-top: 20px;
+        }
+        .loading {
+            font-style: italic;
+            color: gray;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -14,35 +40,62 @@
         </div>
     </header>
 
-    <section id="about">
-        <h2>About LOOP COIN</h2>
-        <p>Loop Coin is a revolutionary new token designed to bring innovation and efficiency to the blockchain space. With its unique features, Loop Coin aims to provide fast and secure transactions for all users.</p>
+    <section id="token-details">
+        <h2>Token Details</h2>
+        <div id="details-container">
+            <p class="loading">Fetching token details...</p>
+        </div>
     </section>
-
-    <section id="features">
-        <h2>Features</h2>
-        <ul>
-            <li>Fast and Secure Transactions</li>
-            <li>Low Transaction Fees</li>
-            <li>Scalable Blockchain Technology</li>
-            <li>Decentralized and Transparent</li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 LOOP COIN. All rights reserved.</p>
-    </footer>
 
     <script>
+        const tokenAddress = "0x9163AA4106334F6Ea351372Ca65D6554440a238b"; // Your token address
+        const apiKey = "2ABIPZJ3CBR628E2QBV7CCCSQSXUA5IRV8"; // Your PolygonScan API key
+
+        async function fetchTokenDetails() {
+            const detailsContainer = document.getElementById("details-container");
+            detailsContainer.innerHTML = `<p class="loading">Fetching token details...</p>`;
+            try {
+                // Fetch max supply
+                const supplyResponse = await fetch(`https://api.polygonscan.com/api?module=token&action=getTokenSupply&contractaddress=${tokenAddress}&apikey=${apiKey}`);
+                const supplyData = await supplyResponse.json();
+                const maxSupply = supplyData.result || "N/A";
+
+                // Fetch token holders (not directly available from free API)
+                const holdersResponse = await fetch(`https://api.polygonscan.com/api?module=token&action=tokenholderlist&contractaddress=${tokenAddress}&apikey=${apiKey}`);
+                const holdersData = await holdersResponse.json();
+                const holders = holdersData.status === "1" ? holdersData.result.length : "N/A";
+
+                // Mock price and market cap (replace with CoinGecko or similar API)
+                const price = "N/A (Add price API)";
+                const marketCap = "N/A (Add price API)";
+                const circulatingSupply = maxSupply * 0.75; // Mock circulating supply
+
+                // Display details
+                detailsContainer.innerHTML = `
+                    <p><strong>Max Supply:</strong> ${maxSupply}</p>
+                    <p><strong>Holders:</strong> ${holders}</p>
+                    <p><strong>Price:</strong> ${price}</p>
+                    <p><strong>Market Cap:</strong> ${marketCap}</p>
+                    <p><strong>Circulating Supply:</strong> ${circulatingSupply}</p>
+                `;
+            } catch (error) {
+                detailsContainer.innerHTML = `<p>Error fetching token details. Please try again later.</p>`;
+                console.error("Error fetching token details:", error);
+            }
+        }
+
         function searchAddress() {
-            var address = document.getElementById("address").value;
+            const address = document.getElementById("address").value;
             if (address) {
-                var url = "https://polygonscan.com/address/" + address + "#code";  // Add #code to URL
-                window.open(url, "_blank"); // Open the URL in a new tab
+                const url = `https://polygonscan.com/address/${address}#code`;
+                window.open(url, "_blank");
             } else {
                 alert("Please enter an address.");
             }
         }
+
+        // Fetch token details on page load
+        fetchTokenDetails();
     </script>
 </body>
 </html>
