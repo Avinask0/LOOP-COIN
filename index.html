@@ -57,37 +57,21 @@
 
         .token-address {
             margin-top: 20px;
-            font-size: 14px;
+            font-size: 14px; /* Smaller size */
             background-color: #f0f0f0;
             padding: 12px;
             border-radius: 4px;
             display: inline-block;
             cursor: pointer;
             text-align: center;
-            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -3px -3px 5px rgba(0, 0, 0, 0.1);
-            transform: perspective(1px) translateZ(0);
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -3px -3px 5px rgba(0, 0, 0, 0.1); /* 3D effect */
+            transform: perspective(1px) translateZ(0); /* 3D transformation */
             transition: all 0.3s ease;
         }
 
         .token-address:hover {
-            transform: translateY(-5px);
-            box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.4), -3px -6px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .api-rectangle {
-            margin-top: 30px;
-            width: 80%; /* 80% of the width of the address */
-            height: 55%; /* 55% of the height of the address */
-            background-color: #e0e0e0;
-            border-radius: 8px;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(0, 0, 0, 0.1);
-            transform: perspective(1px) translateZ(0);
-            transition: all 0.3s ease;
-        }
-
-        .api-rectangle:hover {
-            transform: translateY(-8px);
-            box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4), -5px -10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px); /* Lift on hover for 3D effect */
+            box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.4), -3px -6px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
         }
 
         section {
@@ -115,8 +99,156 @@
         <div class="token-address" onclick="copyAddress()">
             0x9163AA4106334F6Ea351372Ca65D6554440a238b
         </div>
-        <!-- Rectangle below the address -->
-        <div class="api-rectangle"></div>
+    </header>
+
+    <section id="about">
+        <h2>About LOOP COIN</h2>
+        <p>Loop Coin is a revolutionary new token designed to bring innovation and efficiency to the blockchain space. With its unique features, Loop Coin aims to provide fast and secure transactions for all users.</p>
+    </section>
+
+    <section id="features">
+        <h2>Features</h2>
+        <ul>
+            <li>Fast and Secure Transactions</li>
+            <li>Low Transaction Fees</li>
+            <li>Scalable Blockchain Technology</li>
+            <li>Decentralized and Transparent</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 LOOP COIN. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function searchAddress() {
+            var address = document.getElementById("address").value;
+            if (address) {
+                var url = "https://polygonscan.com/address/" + address + "#code";  // Add #code to URL
+                window.open(url, "_blank"); // Open the URL in a new tab
+            } else {
+                alert("Please enter an address.");
+            }
+        }
+
+        // Function to copy the token address
+        function copyAddress() {
+            var copyText = document.querySelector(".token-address");
+            var range = document.createRange();
+            range.selectNode(copyText);
+            window.getSelection().removeAllRanges(); // Clear current selections
+            window.getSelection().addRange(range); // Select the text
+            try {
+                document.execCommand('copy'); // Copy the text
+                alert("Token address copied to clipboard!");
+            } catch (err) {
+                alert("Failed to copy address.");
+            }
+            window.getSelection().removeAllRanges(); // Deselect the text
+        }
+    </script>
+</body>
+    </html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOP COIN</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        #address {
+            padding: 8px;
+            font-size: 16px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 8px 16px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .token-address {
+            margin-top: 20px;
+            font-size: 14px; /* Smaller size */
+            background-color: #f0f0f0;
+            padding: 12px;
+            border-radius: 4px;
+            display: inline-block;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -3px -3px 5px rgba(0, 0, 0, 0.1); /* 3D effect */
+            transform: perspective(1px) translateZ(0); /* 3D transformation */
+            transition: all 0.3s ease;
+        }
+
+        .token-address:hover {
+            transform: translateY(-5px); /* Lift on hover for 3D effect */
+            box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.4), -3px -6px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+        }
+
+        section {
+            margin-top: 20px;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LOOP COIN</h1>
+        <div class="search-container">
+            <input type="text" id="address" placeholder="Enter address...">
+            <button type="button" onclick="searchAddress()">Search</button>
+        </div>
+        <!-- Token address section -->
+        <div class="token-address" onclick="copyAddress()">
+            0x9163AA4106334F6Ea351372Ca65D6554440a238b
+        </div>
     </header>
 
     <section id="about">
