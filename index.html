@@ -57,21 +57,37 @@
 
         .token-address {
             margin-top: 20px;
-            font-size: 14px; /* Smaller size */
+            font-size: 14px;
             background-color: #f0f0f0;
             padding: 12px;
             border-radius: 4px;
             display: inline-block;
             cursor: pointer;
             text-align: center;
-            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -3px -3px 5px rgba(0, 0, 0, 0.1); /* 3D effect */
-            transform: perspective(1px) translateZ(0); /* 3D transformation */
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -3px -3px 5px rgba(0, 0, 0, 0.1);
+            transform: perspective(1px) translateZ(0);
             transition: all 0.3s ease;
         }
 
         .token-address:hover {
-            transform: translateY(-5px); /* Lift on hover for 3D effect */
-            box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.4), -3px -6px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+            transform: translateY(-5px);
+            box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.4), -3px -6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .api-rectangle {
+            margin-top: 30px;
+            width: 80%; /* 80% of the width of the address */
+            height: 55%; /* 55% of the height of the address */
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(0, 0, 0, 0.1);
+            transform: perspective(1px) translateZ(0);
+            transition: all 0.3s ease;
+        }
+
+        .api-rectangle:hover {
+            transform: translateY(-8px);
+            box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4), -5px -10px 20px rgba(0, 0, 0, 0.2);
         }
 
         section {
@@ -99,6 +115,8 @@
         <div class="token-address" onclick="copyAddress()">
             0x9163AA4106334F6Ea351372Ca65D6554440a238b
         </div>
+        <!-- Rectangle below the address -->
+        <div class="api-rectangle"></div>
     </header>
 
     <section id="about">
