@@ -15,16 +15,19 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            background-color: #f8f8f8;
             text-align: center;
         }
 
         header {
+            text-align: center;
             margin-bottom: 20px;
         }
 
         h1 {
             font-size: 36px;
             margin: 0;
+            padding: 10px 0;
         }
 
         .search-container {
@@ -56,41 +59,41 @@
         }
 
         .token-address {
-            margin-top: 20px;
-            font-size: 14px; /* Smaller size */
+            margin-top: 30px;
+            font-size: 14px;
             background-color: #f0f0f0;
             padding: 12px;
             border-radius: 4px;
             display: inline-block;
             cursor: pointer;
             text-align: center;
-            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -3px -3px 5px rgba(0, 0, 0, 0.1); /* 3D effect */
-            transform: perspective(1px) translateZ(0); /* 3D transformation */
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -3px -3px 5px rgba(0, 0, 0, 0.1);
+            transform: perspective(1px) translateZ(0);
             transition: all 0.3s ease;
         }
 
         .token-address:hover {
-            transform: translateY(-5px); /* Lift on hover for 3D effect */
-            box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.4), -3px -6px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+            transform: translateY(-5px);
+            box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.4), -3px -6px 10px rgba(0, 0, 0, 0.2);
         }
 
         .api-data-container {
             margin-top: 30px;
-            width: 90%; /* Adjust width to fit within screen */
+            width: 90%;
             max-width: 900px;
-            height: 200px; /* Fixed height for the API data container */
+            height: 200px;
             background-color: #f4f4f4;
             border-radius: 8px;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(0, 0, 0, 0.1); /* 3D shadow */
-            transform: perspective(1px) translateZ(0); /* 3D transformation */
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(0, 0, 0, 0.1);
+            transform: perspective(1px) translateZ(0);
             transition: all 0.3s ease;
             padding: 20px;
             box-sizing: border-box;
         }
 
         .api-data-container:hover {
-            transform: translateY(-8px); /* Lift effect on hover */
-            box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4), -5px -10px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+            transform: translateY(-8px);
+            box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4), -5px -10px 20px rgba(0, 0, 0, 0.2);
         }
 
         section {
@@ -120,7 +123,6 @@
         </div>
         <!-- API Data Container -->
         <div class="api-data-container">
-            <!-- Placeholder for API data -->
             <p>API data will appear here later...</p>
         </div>
     </header>
