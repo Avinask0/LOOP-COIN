@@ -74,6 +74,25 @@
             box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.4), -3px -6px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
         }
 
+        .api-data-container {
+            margin-top: 30px;
+            width: 90%; /* Adjust width to fit within screen */
+            max-width: 900px;
+            height: 200px; /* Fixed height for the API data container */
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(0, 0, 0, 0.1); /* 3D shadow */
+            transform: perspective(1px) translateZ(0); /* 3D transformation */
+            transition: all 0.3s ease;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .api-data-container:hover {
+            transform: translateY(-8px); /* Lift effect on hover */
+            box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4), -5px -10px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+        }
+
         section {
             margin-top: 20px;
             padding: 20px;
@@ -98,6 +117,11 @@
         <!-- Token address section -->
         <div class="token-address" onclick="copyAddress()">
             0x9163AA4106334F6Ea351372Ca65D6554440a238b
+        </div>
+        <!-- API Data Container -->
+        <div class="api-data-container">
+            <!-- Placeholder for API data -->
+            <p>API data will appear here later...</p>
         </div>
     </header>
 
