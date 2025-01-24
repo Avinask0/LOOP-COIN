@@ -57,16 +57,21 @@
 
         .token-address {
             margin-top: 20px;
-            font-size: 18px;
+            font-size: 14px; /* Smaller size */
             background-color: #f0f0f0;
-            padding: 10px;
+            padding: 12px;
             border-radius: 4px;
             display: inline-block;
             cursor: pointer;
+            text-align: center;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -3px -3px 5px rgba(0, 0, 0, 0.1); /* 3D effect */
+            transform: perspective(1px) translateZ(0); /* 3D transformation */
+            transition: all 0.3s ease;
         }
 
         .token-address:hover {
-            background-color: #e0e0e0;
+            transform: translateY(-5px); /* Lift on hover for 3D effect */
+            box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.4), -3px -6px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
         }
 
         section {
