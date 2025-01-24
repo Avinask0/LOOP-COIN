@@ -17,7 +17,7 @@
             height: 100vh;
             text-align: center;
         }
-        
+
         header {
             margin-bottom: 20px;
         }
@@ -55,6 +55,20 @@
             background-color: #45a049;
         }
 
+        .token-address {
+            margin-top: 20px;
+            font-size: 18px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .token-address:hover {
+            background-color: #e0e0e0;
+        }
+
         section {
             margin-top: 20px;
             padding: 20px;
@@ -75,6 +89,10 @@
         <div class="search-container">
             <input type="text" id="address" placeholder="Enter address...">
             <button type="button" onclick="searchAddress()">Search</button>
+        </div>
+        <!-- Token address section -->
+        <div class="token-address" onclick="copyAddress()">
+            0x9163AA4106334F6Ea351372Ca65D6554440a238b
         </div>
     </header>
 
@@ -106,6 +124,22 @@
             } else {
                 alert("Please enter an address.");
             }
+        }
+
+        // Function to copy the token address
+        function copyAddress() {
+            var copyText = document.querySelector(".token-address");
+            var range = document.createRange();
+            range.selectNode(copyText);
+            window.getSelection().removeAllRanges(); // Clear current selections
+            window.getSelection().addRange(range); // Select the text
+            try {
+                document.execCommand('copy'); // Copy the text
+                alert("Token address copied to clipboard!");
+            } catch (err) {
+                alert("Failed to copy address.");
+            }
+            window.getSelection().removeAllRanges(); // Deselect the text
         }
     </script>
 </body>
