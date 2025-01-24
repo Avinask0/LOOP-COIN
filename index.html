@@ -16,6 +16,8 @@
             justify-content: center;
             height: 100vh;
             text-align: center;
+            background-color: #000000; /* Black background */
+            color: magenta; /* Magenta text color */
         }
 
         header {
@@ -25,6 +27,7 @@
         h1 {
             font-size: 36px;
             margin: 0;
+            color: magenta; /* Magenta heading */
         }
 
         .search-container {
@@ -39,6 +42,8 @@
             margin-right: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            color: magenta; /* Magenta text in input */
+            background-color: #222; /* Dark background for input */
         }
 
         button {
@@ -46,32 +51,32 @@
             font-size: 16px;
             border: none;
             border-radius: 4px;
-            background-color: #4CAF50;
-            color: white;
+            background-color: magenta; /* Magenta button */
+            color: black;
             cursor: pointer;
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #d700d7; /* Darker magenta on hover */
         }
 
         .token-address {
             margin-top: 20px;
-            font-size: 14px; /* Smaller size */
-            background-color: #f0f0f0;
+            font-size: 14px;
+            background-color: #333; /* Dark background for token address */
             padding: 12px;
             border-radius: 4px;
             display: inline-block;
             cursor: pointer;
             text-align: center;
-            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -3px -3px 5px rgba(0, 0, 0, 0.1); /* 3D effect */
-            transform: perspective(1px) translateZ(0); /* 3D transformation */
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -3px -3px 5px rgba(0, 0, 0, 0.1);
+            color: magenta; /* Magenta text for token address */
             transition: all 0.3s ease;
         }
 
         .token-address:hover {
-            transform: translateY(-5px); /* Lift on hover for 3D effect */
-            box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.4), -3px -6px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+            transform: translateY(-5px);
+            box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.4), -3px -6px 10px rgba(0, 0, 0, 0.2);
         }
 
         section {
@@ -79,6 +84,8 @@
             padding: 20px;
             width: 80%;
             max-width: 800px;
+            background-color: #222; /* Dark background for sections */
+            border-radius: 8px;
         }
 
         footer {
