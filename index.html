@@ -13,16 +13,19 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
+            justify-content: flex-start; /* Keep content aligned at the top */
+            min-height: 100vh; /* Allow scrolling */
             text-align: center;
             background-color: #121212;
             color: white;
+            overflow-y: auto; /* Enable scrolling */
         }
 
         header {
             margin-bottom: 20px;
             position: relative;
+            width: 100%;
+            padding-top: 20px; /* Prevents heading from being hidden */
         }
 
         h1 {
@@ -133,17 +136,6 @@
             0x9163AA4106334F6Ea351372Ca65D6554440a238b
         </div>
     </header>
-         
-
-
-
-
-
-
-
-
-
-    
 
     <section id="about">
         <h2>About LOOP COIN</h2>
@@ -161,14 +153,19 @@
     </section>
 
     <footer>
-         <p>
+        <p>
             <a href="https://app.uniswap.org/explore/tokens/polygon/0x9163aa4106334f6ea351372ca65d6554440a238b?utm_source=share-tdp&utm_medium=mobile" 
                target="_blank">
                Explore on Uniswap
             </a>
-         </p>
+        </p>
+        <p>
+            <a href="https://coinmarketcap.com/dexscan/polygon/0x847bf530fcff2a51bc95b65559cc1e1b3c3e2309/" 
+               target="_blank">
+               View on CoinMarketCap
+            </a>
+        </p>
         <p>&copy; 2025 LOOP COIN. All rights reserved.</p>
-       
     </footer>
 
     <script>
