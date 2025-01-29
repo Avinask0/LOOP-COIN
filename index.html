@@ -97,13 +97,13 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5), 0 6px 30px rgba(0, 0, 0, 0.6);
         }
 
-        /* Logo rotation animation */
+        /* Horizontal Logo rotation animation */
         @keyframes rotateLogo {
             0% {
-                transform: rotate(0deg);
+                transform: rotateY(0deg);
             }
             100% {
-                transform: rotate(360deg);
+                transform: rotateY(360deg);
             }
         }
 
@@ -159,13 +159,11 @@
             <input type="text" id="address" placeholder="Enter address...">
             <button type="button" onclick="searchAddress()">Search</button>
         </div>
+        <!-- Logo with horizontal rotation applied -->
+        <img src="cropped-cropped_image.png" alt="Logo" class="logo">
         <div class="token-address" onclick="copyAddress()">
             0x9163AA4106334F6Ea351372Ca65D6554440a238b
         </div>
-
-        <!-- Logo Image with Rotation -->
-        <img src="cropped-cropped_image.png" alt="LOOP COIN Logo" class="logo">
-
     </header>
 
     <!-- Wallet Buttons -->
